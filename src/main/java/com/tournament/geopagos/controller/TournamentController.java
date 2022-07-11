@@ -25,7 +25,10 @@ public class TournamentController {
     }
 
     @PostMapping("/female")
-    private FemalePlayer femaleTournamentWinner(@RequestBody List<FemalePlayer> players){
+    private String femaleTournamentWinner(
+            @RequestBody
+            @NotEmpty(message = "Input players list cannot be empty.")
+            List<FemalePlayer> players){
         return tournamentService.getFemaleWinner(players);
     }
 
