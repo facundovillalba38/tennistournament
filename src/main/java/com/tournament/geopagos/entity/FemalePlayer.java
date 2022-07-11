@@ -7,8 +7,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class FemalePlayer extends Player{
     private Integer reaction;
+
+    public FemalePlayer(String name, Integer hability, Integer reaction) {
+        super(name, hability);
+        this.reaction = reaction;
+    }
 }
